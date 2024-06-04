@@ -1,0 +1,212 @@
+{
+  "project_info": {
+    "project_number": "1074016177582",
+    "firebase_url": "https://lexrn1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "lexrn1",
+    "storage_bucket": "lexrn1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074016177582:android:f9ed4269ef7fcc385e0c3f",
+        "android_client_info": {
+          "package_name": "com.AltieRealityLearnXR"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6TJ2WPMoWD7REVVtNMTeYM0_SI6N7ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1074016177582-fg13vp22sigo15hgmen0q3be1llfhk6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.altiereality.lexrnunity"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074016177582:android:f0d71e0f6599898e5e0c3f",
+        "android_client_info": {
+          "package_name": "com.altiereality.lexrnunity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6TJ2WPMoWD7REVVtNMTeYM0_SI6N7ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1074016177582-fg13vp22sigo15hgmen0q3be1llfhk6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.altiereality.lexrnunity"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074016177582:android:8ae16e4d472f728c5e0c3f",
+        "android_client_info": {
+          "package_name": "com.altiereality1.lexrn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074016177582-8qoq0vhb69e211tnm33a8lvbj58hcm1g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1074016177582-dgasbh9ac98vtt692i8ss3i9e6hd5ugl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "c4e22277719f2205a4b68d3e64b427e58543c420"
+          }
+        },
+        {
+          "client_id": "1074016177582-duff3bg1dhabqf49ge9amrl2urliutrp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "ebe5eb20c8305d689df16260164ea856c2595b6a"
+          }
+        },
+        {
+          "client_id": "1074016177582-efhp11hmj714v8ih560u5ko8fa5vh4kc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "c6faa9bacc6f8233d837d4e6f7f1f91e12c180e6"
+          }
+        },
+        {
+          "client_id": "1074016177582-fa6ug1vmb4lanpr2a3ll6h4kovfaigp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "28b778507bc7b7d34c14b04227453b9096853c41"
+          }
+        },
+        {
+          "client_id": "1074016177582-p3ifegb00dbct8je99er1grjtqqoqjo0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "1dfb23d1078ad6839489819c581a3b63f43868fc"
+          }
+        },
+        {
+          "client_id": "1074016177582-ui27jcool64fol36it32025u7eo2islv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.altiereality1.lexrn",
+            "certificate_hash": "9ac2f2d8e4ec188bd60ebe39154a01fe48d5da6d"
+          }
+        },
+        {
+          "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6TJ2WPMoWD7REVVtNMTeYM0_SI6N7ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1074016177582-fg13vp22sigo15hgmen0q3be1llfhk6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.altiereality.lexrnunity"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1759539566894887~5222813653"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1074016177582:android:3c6031292fb8c1625e0c3f",
+        "android_client_info": {
+          "package_name": "com.altierealityunity.lexrn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6TJ2WPMoWD7REVVtNMTeYM0_SI6N7ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1074016177582-8rbnm8p5q5gl55l7b6u2o2v2crponm4a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1074016177582-fg13vp22sigo15hgmen0q3be1llfhk6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.altiereality.lexrnunity"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
