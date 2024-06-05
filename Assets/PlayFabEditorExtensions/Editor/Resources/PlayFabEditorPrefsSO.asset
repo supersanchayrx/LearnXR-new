@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
-  DevAccountEmail: grindinforvalore@gmail.com
-  DevAccountToken: gm9qyd1qyhuydw6bdrbsd4ratxmn3iu5fh4wqpsfp6t8kdja87ezxnaomzosk3zi7mfk567e819wf6wesdp3o4m8ebhyhkgaotos7dgr4kb9rukncgbyypfr3c1bd16uq9y1apwud9ywrap4qg73x7ohhdkj9bcgprjsin9m3cnjper3sqaafhdxwxhc66xmn4by16u5
+  DevAccountEmail: tech@altiereality.com
+  DevAccountToken: jxxqj3kzfythp61iui1wt5bihbafp1r5gftiqj76uy5bybwbry43gnotchjc59o39jpdxoo1ces19uyrr6jcikwqn7mppjytttrfk97qhukadgtuh9xjmfqwqhbgq54seaussm8ci19uz5wo1cumb31ie3ip1bnjee94nmn43wxwz6u1nkwuy9fxp95enmxudcprudd5
   AadAuthorization: 
-  SelectedStudio: 
+  SelectedStudio: My Game Studio
   SdkPath: Assets/PlayFabSDK
   EdExPath: 
   LocalCloudScriptPath: 

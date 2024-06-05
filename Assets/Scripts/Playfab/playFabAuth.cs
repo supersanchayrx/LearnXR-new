@@ -9,10 +9,10 @@ using PlayFab;
 public class playFabAuth : MonoBehaviour
 {
 
-    public MoveToPortal portalScript;
+    //public MoveToPortal portalScript;
 
     [Header("Testing")]
-    public TMP_Text messageText;
+    //public TMP_Text messageText;
     public TMP_InputField emailInput, passwordInput;
     //public Button learnXRButton;
     public bool authSuccessful;
@@ -36,16 +36,17 @@ public class playFabAuth : MonoBehaviour
 
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
-        messageText.text = "Registered";
+        //messageText.text = "Registered";
         authSuccessful = true;
-        portalScript.move = true;
+        Debug.Log("SuccessfulRegistration");
+        //portalScript.move = true;
         //portalScript.move = true;
 
     }
 
     void OnError(PlayFabError error)
     {
-        messageText.text = "Failed! Error Code = "+error.GenerateErrorReport();
-
+       // messageText.text = "Failed! Error Code = "+error.GenerateErrorReport();
+        Debug.Log("Failed! Error Code = " + error.GenerateErrorReport());
     }
 }

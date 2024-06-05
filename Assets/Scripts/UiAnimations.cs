@@ -5,37 +5,43 @@ using UnityEngine;
 
 public class UiAnimations : MonoBehaviour
 {
-    public Animator emailText;
-    public Animator passText;
-    public Animator emailInput;
-    public Animator passInput;
-    public Animator signinButton;
+    public Animator CenterCanvas;
+    public Animator LeftCanvas;
+    public Animator RightCanvas;
+    /*public Animator passInput;
+    public Animator signinButton;*/
     public playFabAuth auth;
+    bool localAuthBool;
+
+    private void Start()
+    {
+        localAuthBool = true;
+    }
 
 
     public void moveRight()
     {
-        emailInput.Play("right");
-        passInput.Play("right");
+        RightCanvas.Play("right");
+        //passInput.Play("right");
     }
 
     public void moveLeft()
     {
-        emailText.Play("left");
-        passText.Play("left");
+        LeftCanvas.Play("left");
+        //passText.Play("left");
     }
 
     public void moveUp()
     {
-        signinButton.Play("up");
+        CenterCanvas.Play("up");
     }
 
 
     private void Update()
     {
-        if(auth.authSuccessful)
+        if(auth.authSuccessful && localAuthBool)
         {
-            auth.authSuccessful = false;
+            localAuthBool = false;
             moveLeft();
             moveRight();
             moveUp();
