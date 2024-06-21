@@ -31,13 +31,4 @@ public class ChatAi : MonoBehaviour
             Debug.Log(chatResponse.Content);
         }
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

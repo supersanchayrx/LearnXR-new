@@ -1,0 +1,1 @@
+You can add your video to the screens by inserting video file into the Video Clip field of the Video Player component.
