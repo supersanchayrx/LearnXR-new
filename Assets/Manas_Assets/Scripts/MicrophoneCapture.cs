@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.IO;
-using System.Collections.Generic;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 
@@ -16,6 +15,7 @@ public class MicrophoneCapture : MonoBehaviour
 
     public ChatAi chatAi; // Reference to ChatAi component
     public CoordinateSetter coordinateSetter; // Reference to CoordinateSetter component
+    public PlaceInformationDisplay placeInformationDisplay; // Reference to PlaceInformationDisplay component
     public bool responseReceived;
     public string transcriptFileName = "transcription.txt";
     public string coordinatesFileName = "coordinates.txt";
@@ -41,6 +41,42 @@ public class MicrophoneCapture : MonoBehaviour
                 Debug.LogError("CoordinateSetter reference is missing.");
             }
         }
+
+        if (placeInformationDisplay == null)
+        {
+            placeInformationDisplay = FindObjectOfType<PlaceInformationDisplay>();
+            if (placeInformationDisplay == null)
+            {
+                Debug.LogError("PlaceInformationDisplay reference is missing.");
+            }
+        }
+    }
+
+    private void Update()
+    {
+        #if UNITY_EDITOR || UNITY_STANDALONE
+        // Use keyboard inputs in the editor or standalone build
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartRecording();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            StopRecording();
+        }
+        #elif UNITY_ANDROID
+        // Use Oculus controller buttons in the Android build (for Oculus Quest)
+        if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            StartRecording();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            StopRecording();
+        }
+        #endif
     }
 
     public void StartRecording()
@@ -172,26 +208,76 @@ public class MicrophoneCapture : MonoBehaviour
             Debug.Log($"Coordinates: {response}");
             SaveTextToFile(response, coordinatesFileName);
             ParseCoordinatesAndSetInCoordinateSetter(response);
+
+            // Get place name from the response and request more information
+            string placeName = ExtractPlaceNameFromResponse(response);
+            if (!string.IsNullOrEmpty(placeName))
+            {
+                string placeInfo = await chatAi.GetPlaceInformation(placeName);
+                if (!string.IsNullOrEmpty(placeInfo) && placeInformationDisplay != null)
+                {
+                    Debug.Log($"Place Information: {placeInfo}");
+                    placeInformationDisplay.DisplayPlaceInformation(placeInfo);
+                }
+                else
+                {
+                    Debug.LogError("Failed to get place information or PlaceInformationDisplay is null.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Failed to extract place name.");
+            }
         }
+        else
+        {
+            Debug.LogError("Failed to get coordinates.");
+        }
+    }
+
+    private string ExtractPlaceNameFromResponse(string response)
+    {
+        // Log the response to see what format it is in
+        Debug.Log($"Extracting place name from response: {response}");
+
+        // Assuming the place name is in the line starting with "Location:"
+        string[] lines = response.Split('\n');
+        foreach (var line in lines)
+        {
+            if (line.ToLower().Contains("location"))
+            {
+                return line.Split(':')[1].Trim();
+            }
+        }
+
+        // If the above method fails, try other patterns
+        foreach (var line in lines)
+        {
+            if (line.ToLower().Contains("place name"))
+            {
+                return line.Split(':')[1].Trim();
+            }
+        }
+
+        // Log failure to extract place name for further debugging
+        Debug.LogError("Failed to extract place name from the response.");
+        return null;
     }
 
     private void ParseCoordinatesAndSetInCoordinateSetter(string coordinatesText)
     {
         Debug.Log($"Received Coordinates Text: {coordinatesText}");
 
-        // Initialize variables
         float latitude = 0f;
         float longitude = 0f;
         bool latParsed = false;
         bool lonParsed = false;
         string locationName = "Unknown Location";
 
-        // Split the response into lines
         string[] lines = coordinatesText.Split('\n');
 
         foreach (var line in lines)
         {
-            // Check for latitude and longitude in the detailed format
             if (line.ToLower().Contains("latitude"))
             {
                 string latStr = line.Split(':')[1].Trim().Replace("° N", "").Replace("° S", "");
@@ -211,7 +297,6 @@ public class MicrophoneCapture : MonoBehaviour
                 locationName = line.Split(':')[1].Trim();
             }
 
-            // Check for latitude and longitude in the simple format
             if (!latParsed && !lonParsed)
             {
                 string[] coords = line.Split(',');
@@ -223,7 +308,6 @@ public class MicrophoneCapture : MonoBehaviour
             }
         }
 
-        // Check if both latitude and longitude were successfully parsed
         if (latParsed && lonParsed && coordinateSetter != null)
         {
             Debug.Log($"Parsed Coordinates - Latitude: {latitude}, Longitude: {longitude}, Location: {locationName}");

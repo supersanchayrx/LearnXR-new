@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using OpenAI;
-using System.Threading.Tasks;  // Add this directive
 
 public class ChatAi : MonoBehaviour
 {
@@ -13,7 +12,36 @@ public class ChatAi : MonoBehaviour
     {
         ChatMessage newMessage = new ChatMessage();
         newMessage.Content = newTextInput;
-        newMessage.Role = "user"; 
+        newMessage.Role = "user";
+
+        messages.Add(newMessage);
+
+        CreateChatCompletionRequest request = new CreateChatCompletionRequest();
+        request.Messages = messages;
+        request.Model = "gpt-3.5-turbo";
+
+        var response = await openAI.CreateChatCompletion(request);
+
+        if (response.Choices != null && response.Choices.Count > 0)
+        {
+            var chatResponse = response.Choices[0].Message;
+            messages.Add(chatResponse);
+
+            Debug.Log(chatResponse.Content);
+            return chatResponse.Content;
+        }
+        else
+        {
+            Debug.LogError("No response from OpenAI API.");
+            return null;
+        }
+    }
+
+    public async Task<string> GetPlaceInformation(string placeName)
+    {
+        ChatMessage newMessage = new ChatMessage();
+        newMessage.Content = $"Tell me more about {placeName}.";
+        newMessage.Role = "user";
 
         messages.Add(newMessage);
 
